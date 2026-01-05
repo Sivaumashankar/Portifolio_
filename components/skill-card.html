@@ -1,0 +1,88 @@
+<!-- 
+    Skill Card Component Template
+    DevOps Portfolio - Shankar
+    
+    Usage: Clone this template and populate with skill data
+    Attributes:
+    - data-category: Skill category (e.g., Cloud, CI/CD, Containers)
+    - data-items: Comma-separated list of skills
+-->
+
+<template id="skill-card-template">
+    <article class="skill-card scroll-animate">
+        <div class="skill-card-icon">
+            <!-- Icon will be inserted dynamically based on category -->
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+        </div>
+
+        <h4 class="skill-title"></h4>
+
+        <div class="skill-card-items">
+            <!-- Skill items will be dynamically inserted -->
+        </div>
+    </article>
+</template>
+
+<!-- Skill Icons Library -->
+<template id="skill-icons">
+    <!-- Cloud Icon -->
+    <svg id="icon-cloud" viewBox="0 0 24 24" fill="currentColor">
+        <path
+            d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h.71C7.37 7.69 9.48 6 12 6c3.04 0 5.5 2.46 5.5 5.5v.5H19c1.66 0 3 1.34 3 3s-1.34 3-3 3z" />
+    </svg>
+
+    <!-- IaC/Terraform Icon -->
+    <svg id="icon-iac" viewBox="0 0 24 24" fill="currentColor">
+        <path
+            d="M12.042 23.648V14.874l-7.51-4.335v8.773l7.51 4.336zm.916-9.95l7.51-4.334-7.51-4.336-7.51 4.336 7.51 4.334zm8.426 4.127V9.05l-7.51 4.336v8.773l7.51-4.334zM8.532.824L1.022 5.16v8.773l7.51-4.335V.824z" />
+    </svg>
+
+    <!-- CI/CD Icon -->
+    <svg id="icon-cicd" viewBox="0 0 24 24" fill="currentColor">
+        <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+    </svg>
+
+    <!-- Container Icon -->
+    <svg id="icon-container" viewBox="0 0 24 24" fill="currentColor">
+        <path
+            d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
+    </svg>
+
+    <!-- Linux/OS Icon -->
+    <svg id="icon-os" viewBox="0 0 24 24" fill="currentColor">
+        <path
+            d="M12.503.587a1.87 1.87 0 0 0-.927.003c-.252.052-.465.136-.62.23a1.13 1.13 0 0 0-.303.259c-.188.215-.333.517-.419.9c-.088.393-.127.875-.097 1.455c.025.483.093 1.025.206 1.609c.11.57.27 1.184.48 1.833c.211.65.474 1.337.79 2.042c.319.71.69 1.432 1.116 2.15c.425.717.903 1.422 1.43 2.097c.528.676 1.102 1.316 1.712 1.905c.61.588 1.254 1.12 1.914 1.58c.66.46 1.334.848 2.006 1.142c.671.294 1.338.495 1.976.588c.638.093 1.245.077 1.795-.044c.55-.121 1.04-.35 1.442-.69c.402-.34.71-.788.901-1.33c.192-.542.266-1.175.208-1.886a6.11 6.11 0 0 0-.326-1.452c-.165-.463-.393-.93-.685-1.387a8.37 8.37 0 0 0-1.05-1.31c-.404-.41-.862-.798-1.367-1.14a12.03 12.03 0 0 0-1.648-.922c-.581-.271-1.195-.498-1.824-.669a16.84 16.84 0 0 0-1.97-.413c-.673-.096-1.348-.142-2.008-.129c-.66.014-1.3.09-1.9.23c-.599.14-1.155.345-1.647.614c-.492.27-.916.608-1.254 1.006c-.339.4-.589.857-.735 1.362c-.146.504-.17 1.055-.053 1.64c.117.587.377 1.2.786 1.815c.41.616.969 1.23 1.677 1.817c.708.588 1.565 1.145 2.564 1.643c1 .498 2.14.936 3.395 1.288c1.256.351 2.627.615 4.083.768c1.456.154 2.996.196 4.58.11l.34-.022c1.53-.114 2.96-.356 4.238-.723c1.277-.368 2.399-.863 3.32-1.478c.921-.615 1.635-1.345 2.102-2.175c.468-.83.693-1.754.653-2.744c-.04-.99-.349-2.043-.942-3.125l-.017-.032c-.58-1.039-1.378-2.064-2.389-3.028c-1.011-.964-2.237-1.866-3.665-2.653c-1.43-.787-3.06-1.46-4.869-1.967C17.63 1.08 15.613.74 13.505.587c-.503-.037-1.002-.042-1.493-.013c.164.004.326.008.491.013z" />
+    </svg>
+</template>
+
+<!-- Example Usage (for reference):
+<script>
+    function createSkillCard(skill) {
+        const template = document.getElementById('skill-card-template');
+        const card = template.content.cloneNode(true);
+        
+        card.querySelector('.skill-title').textContent = skill.category;
+        
+        // Get appropriate icon
+        const iconTemplate = document.getElementById(`icon-${skill.iconType}`);
+        if (iconTemplate) {
+            const iconContainer = card.querySelector('.skill-card-icon');
+            iconContainer.innerHTML = '';
+            iconContainer.appendChild(iconTemplate.cloneNode(true));
+        }
+        
+        const itemsContainer = card.querySelector('.skill-card-items');
+        skill.items.forEach(item => {
+            const span = document.createElement('span');
+            span.className = 'skill-tag';
+            span.textContent = item;
+            itemsContainer.appendChild(span);
+        });
+        
+        return card;
+    }
+</script>
+-->
